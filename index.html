@@ -52,13 +52,18 @@
     console.log("Widget initialized with:", options);
 
     const ref = document.referrer || "No referrer";
-    document.querySelector('.widget').style.display = 'block';
-    document.querySelector('.ref').textContent = "Referrer:  " + ref;
-    <h1>
-      ref = {ref}
-      вот ткотаокутмдйк
-    </h1>
+    const widget = document.querySelector('.widget');
+    widget.style.display = 'block';
+
+    // Выводим в блок .ref
+    document.querySelector('.ref').textContent = "Referrer: " + ref;
+
+    // Добавляем отдельный заголовок с ref
+    const h1 = document.createElement('h1');
+    h1.textContent = "Referrer inside H1: " + ref;
+    widget.appendChild(h1);
   };
 </script>
+
 </body>
 </html>
