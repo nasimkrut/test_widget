@@ -31,6 +31,12 @@
       font-size: 16px;
       cursor: pointer;
     }
+    .ref {
+      font-size: 12px;
+      color: gray;
+      margin-top: 10px;
+      word-break: break-all;
+    }
   </style>
 </head>
 <body>
@@ -38,14 +44,16 @@
   <h3>Test Widget</h3>
   <p>Click below to simulate payment init</p>
   <button onclick="alert('Payment started!')">Pay</button>
+  <div class="ref"></div>
 </div>
 
 <script>
   window.initPaymentWidgetNew = function (options) {
     console.log("Widget initialized with:", options);
-    console.log(window.location.hostname);
-    console.log(document.referrer);
+
+    const ref = document.referrer || "No referrer";
     document.querySelector('.widget').style.display = 'block';
+    document.querySelector('.ref').textContent = "Referrer: " + ref;
   };
 </script>
 </body>
