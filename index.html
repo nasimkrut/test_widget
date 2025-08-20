@@ -34,17 +34,19 @@
   </style>
 </head>
 <body>
-  <div class="widget">
-    <h3>Test Widget</h3>
-    <p>Click below to simulate payment init</p>
-    <button onclick="alert('Payment started!')">Pay</button>
-  </div>
+<div class="widget">
+  <h3>Test Widget</h3>
+  <p>Click below to simulate payment init</p>
+  <button onclick="alert('Payment started!')">Pay</button>
+</div>
 
-  <script>
-    window.initPaymentWidgetNew = function (options) {
-      console.log("Widget initialized with:", options);
-      document.querySelector('.widget').style.display = 'block';
-    };
-  </script>
+<script>
+  window.initPaymentWidgetNew = function (options) {
+    console.log("Widget initialized with:", options);
+    console.log(window.location.hostname);
+    console.log(document.referrer);
+    document.querySelector('.widget').style.display = 'block';
+  };
+</script>
 </body>
 </html>
